@@ -133,19 +133,19 @@ SINGLE_NODE_ACK_ARRAY=$(echo $SINGLE_NODE_ACK | jq --raw-input 'split(",")')
 
 SINGLE_NODE_PROPS=$(cat <<-EOF
 {
-    ".properties.on_demand_broker_dedicated_single_node_plan_cf_service_access": {
+    ".properties.on_demand_broker_plan_1_cf_service_access": {
       "value": "$SINGLE_NODE_ACCESS"
     },
-    ".properties.on_demand_broker_dedicated_single_node_plan_rabbitmq_az_placement": {
+    ".properties.on_demand_broker_plan_1_rabbitmq_az_placement": {
       "value": $SINGLE_NODE_AZ_ARRAY
     },
-    ".properties.on_demand_broker_dedicated_single_node_plan_rabbitmq_vm_type": {
+    ".properties.on_demand_broker_plan_1_rabbitmq_vm_type": {
       "value": "$SINGLE_NODE_VM_TYPE"
     },
-    ".properties.on_demand_broker_dedicated_single_node_plan_rabbitmq_persistent_disk_type": {
+    ".properties.on_demand_broker_plan_1_rabbitmq_persistent_disk_type": {
       "value": "$SINGLE_NODE_PERS_DISK_TYPE"
     },
-    ".properties.on_demand_broker_dedicated_single_node_plan_disk_limit_acknowledgement": {
+    ".properties.on_demand_broker_plan_1_disk_limit_acknowledgement": {
       "value": $SINGLE_NODE_ACK_ARRAY
     }
 }
