@@ -17,7 +17,7 @@ params:
 
 inputs:
   - name: pivnet-product
-  - name: vs-pcf-pipelines
+  - name: vs-tile-pipelines
 
 run:
-  path: vs-pcf-pipelines/tasks/upload-product-and-stemcell/task.sh
+  path: vs-tile-pipelines/tasks/upload-product-and-stemcell/task.sh
