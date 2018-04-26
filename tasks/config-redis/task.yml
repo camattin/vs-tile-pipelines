@@ -35,8 +35,8 @@ params:
   PREDELETE_ERRANDS_TO_DISABLE:
 
 inputs:
-  - name: vs-pcf-pipelines
+  - name: vs-tile-pipelines
   - name: tool-om
 
 run:
-  path: vs-pcf-pipelines/tasks/config-redis/task.sh
+  path: vs-tile-pipelines/tasks/config-redis/task.sh
