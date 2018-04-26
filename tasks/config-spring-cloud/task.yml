@@ -24,8 +24,8 @@ params:
   SCS_BROKER_DEREGISTRAR_TYPE:
 
 inputs:
-  - name: vs-pcf-pipelines
+  - name: vs-tile-pipelines
   - name: tool-om
 
 run:
-  path: vs-pcf-pipelines/tasks/config-spring-cloud/task.sh
+  path: vs-tile-pipelines/tasks/config-spring-cloud/task.sh
