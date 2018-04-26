@@ -18,7 +18,7 @@ function fn_other_azs {
 }
 
 #stuffs for setting vm type to accomodate increased memory utilization in errands from runtime config deployments
-if [[ -z "SCS_BROKER_DEPLOYER_TYPE" ]]; then
+if [[ -z "$SCS_BROKER_DEPLOYER_TYPE" ]]; then
    scs_broker_deployer_type="automatic"
 else
    scs_broker_deployer_type="$SCS_BROKER_DEPLOYER_TYPE"
