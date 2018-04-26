@@ -3,6 +3,8 @@
 chmod +x tool-om/om-linux
 CMD=./tool-om/om-linux
 
+set -x
+
 RELEASE=`$CMD -t https://$OPS_MGR_HOST -u $OPS_MGR_USR -p $OPS_MGR_PWD -k available-products | grep -i spring`
 
 PRODUCT_NAME=`echo $RELEASE | cut -d"|" -f2 | tr -d " "`
