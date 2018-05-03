@@ -29,10 +29,10 @@ function main() {
   while :
   do
 
-      om-linux --target "https://${OPSMAN_URI}" \
+      om-linux --target "https://${OPS_MGR_HOST}" \
            --skip-ssl-validation \
-           --username "${OPSMAN_USERNAME}" \
-           --password "${OPSMAN_PASSWORD}" \
+           --username "${OPS_MGR_USR}" \
+           --password "${OPS_MGR_PWD}" \
             curl -path /api/v0/staged/pending_changes > changes-status.txt
 
       if [[ $? -ne 0 ]]; then
@@ -41,10 +41,10 @@ function main() {
         exit 1
       fi
 
-      om-linux --target "https://${OPSMAN_URI}" \
+      om-linux --target "https://${OPS_MGR_HOST}" \
            --skip-ssl-validation \
-           --username "${OPSMAN_USERNAME}" \
-           --password "${OPSMAN_PASSWORD}" \
+           --username "${OPS_MGR_USR}" \
+           --password "${OPS_MGR_PWD}" \
            curl -path /api/v0/installations > running-status.txt
 
       if [[ $? -ne 0 ]]; then

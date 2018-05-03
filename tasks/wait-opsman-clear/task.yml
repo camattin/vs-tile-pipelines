@@ -20,12 +20,12 @@ image_resource:
   source: {repository: czero/cflinuxfs2}
 
 inputs:
-  - name: vs-pcf-pipelines
+  - name: vs-tile-pipelines
 
 params:
-  OPSMAN_USERNAME:
-  OPSMAN_PASSWORD:
-  OPSMAN_URI:
+  OPS_MGR_USR:
+  OPS_MGR_PWD:
+  OPS_MGR_HOST:
 
 run:
-  path: vs-pcf-pipelines/tasks/wait-opsman-clear/task.sh
+  path: vs-tile-pipelines/tasks/wait-opsman-clear/task.sh
