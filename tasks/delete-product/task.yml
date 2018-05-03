@@ -4,8 +4,7 @@ platform: linux
 
 image_resource:
   type: docker-image
-  source:
-    repository: "rjain/buildbox"
+  source: {repository: czero/cflinuxfs2}
 
 params:
   OPS_MGR_HOST:
@@ -15,7 +14,6 @@ params:
 
 inputs:
   - name: vs-tile-pipelines
-  - name: tool-om
 
 run:
   path: vs-tile-pipelines/tasks/delete-product/task.sh
