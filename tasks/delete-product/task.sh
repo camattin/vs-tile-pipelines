@@ -19,4 +19,10 @@ fi
 echo "Unstaging product..."
 $CMD -t https://$OPS_MGR_HOST -u $OPS_MGR_USR -p $OPS_MGR_PWD -k unstage-product -p $PRODUCT
 
+echo "Applying changes..."
+$CMD -t https://$OPS_MGR_HOST -u $OPS_MGR_USR -p $OPS_MGR_PWD -k apply-changes -i
+
+echo "Deleting all unused products..."
+$CMD -t https://$OPS_MGR_HOST -u $OPS_MGR_USR -p $OPS_MGR_PWD -k delete-unused-products
+
 echo "Done"
