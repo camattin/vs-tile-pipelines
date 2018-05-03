@@ -24,6 +24,6 @@ echo "Unstaging product..."
 $CMD -t https://$OPS_MGR_HOST -u $OPS_MGR_USR -p $OPS_MGR_PWD -k unstage-product -p $PRODUCT
 
 echo "Deleting all unused products..."
-$CMD -t https://$OPS_MGR_HOST -u $OPS_MGR_USR -p $OPS_MGR_PWD -k delete-product -p $PRODUCT -v $PRODUCT_VERSION
+$CMD -t https://$OPS_MGR_HOST -u $OPS_MGR_USR -p $OPS_MGR_PWD -k delete-unused-products
 
 echo "Done"
