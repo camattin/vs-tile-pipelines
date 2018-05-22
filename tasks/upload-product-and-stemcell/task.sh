@@ -38,8 +38,13 @@ if [ -n "$STEMCELL_VERSION" ]; then
 
   if [[ -z "$stemcell" ]]; then
     echo "Downloading stemcell $STEMCELL_VERSION"
-    pivnet-cli login --api-token="$PIVNET_API_TOKEN"
-    pivnet-cli download-product-files -p stemcells -r $STEMCELL_VERSION -g "*${IAAS}*" --accept-eula
+    if [[ "$PASWINDOWS" = "true" ]]; then
+       echo "S3 download of $STEMCELL_VERSION"
+       exit
+    else
+       pivnet-cli login --api-token="$PIVNET_API_TOKEN"
+       pivnet-cli download-product-files -p stemcells -r $STEMCELL_VERSION -g "*${IAAS}*" --accept-eula
+    fi
 
     SC_FILE_PATH=`find ./ -name *.tgz`
 
