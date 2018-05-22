@@ -40,7 +40,6 @@ if [ -n "$STEMCELL_VERSION" ]; then
     echo "Downloading stemcell $STEMCELL_VERSION"
     if [[ "$PASWINDOWS" = "true" ]]; then
        echo "S3 download of $STEMCELL_VERSION"
-       exit
     else
        pivnet-cli login --api-token="$PIVNET_API_TOKEN"
        pivnet-cli download-product-files -p stemcells -r $STEMCELL_VERSION -g "*${IAAS}*" --accept-eula
