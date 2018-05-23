@@ -17,6 +17,7 @@ params:
   PASWINDOWS:
 
 inputs:
+  - name: tool-om
   - name: pivnet-product
   - name: vs-tile-pipelines
   - name: windows-stemcell

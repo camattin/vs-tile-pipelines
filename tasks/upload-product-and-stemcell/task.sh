@@ -6,6 +6,9 @@ if [[ -n "$NO_PROXY" ]]; then
   echo "$OM_IP $OPS_MGR_HOST" >> /etc/hosts
 fi
 
+chmod +x tool-om/om-linux
+CMD=./tool-om/om-linux
+
 STEMCELL_VERSION=$(
   cat ./pivnet-product/metadata.json |
   jq --raw-output \
@@ -20,7 +23,7 @@ STEMCELL_VERSION=$(
 
 if [ -n "$STEMCELL_VERSION" ]; then
   diagnostic_report=$(
-    om-linux \
+    $CMD \
       --target https://$OPS_MGR_HOST \
       --username $OPS_MGR_USR \
       --password $OPS_MGR_PWD \
@@ -52,7 +55,7 @@ if [ -n "$STEMCELL_VERSION" ]; then
       exit 1
     fi
 
-    om-linux -t https://$OPS_MGR_HOST -u $OPS_MGR_USR -p $OPS_MGR_PWD -k upload-stemcell -s $SC_FILE_PATH
+    $CMD -t https://$OPS_MGR_HOST -u $OPS_MGR_USR -p $OPS_MGR_PWD -k upload-stemcell -s $SC_FILE_PATH
   fi
 fi
 
@@ -62,9 +65,9 @@ if [[ "$PASWINDOWS" = "true" ]]; then
    unzip winfs-injector*.zip winfs-injector-linux
    chmod 755 winfs-injector-linux
    ./winfs-injector-linux --input-tile *.pivotal --output-tile pas-windows-injected.pivotal
-   om-linux -t https://$OPS_MGR_HOST -u $OPS_MGR_USR -p $OPS_MGR_PWD -k --request-timeout 3600 upload-product -p pas-windows-injected.pivotal
+   $CMD -t https://$OPS_MGR_HOST -u $OPS_MGR_USR -p $OPS_MGR_PWD -k --request-timeout 3600 upload-product -p pas-windows-injected.pivotal
 else
-   om-linux -t https://$OPS_MGR_HOST -u $OPS_MGR_USR -p $OPS_MGR_PWD -k --request-timeout 3600 upload-product -p $FILE_PATH
+   $CMD -t https://$OPS_MGR_HOST -u $OPS_MGR_USR -p $OPS_MGR_PWD -k --request-timeout 3600 upload-product -p $FILE_PATH
 fi
 
 #
