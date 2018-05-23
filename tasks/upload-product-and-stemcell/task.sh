@@ -7,7 +7,7 @@ if [[ -n "$NO_PROXY" ]]; then
 fi
 
 chmod +x tool-om/om-linux
-CMD=./tool-om/om-linux
+CMD=`pwd`/tool-om/om-linux
 
 STEMCELL_VERSION=$(
   cat ./pivnet-product/metadata.json |
