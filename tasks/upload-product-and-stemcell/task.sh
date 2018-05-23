@@ -61,7 +61,7 @@ if [[ "$PASWINDOWS" = "true" ]]; then
    cd pivnet-product
    unzip winfs-injector*.zip winfs-injector-linux
    chmod 755 winfs-injector-linux
-   ./winfs-injector-linux --input-tile ${FILE_PATH} --output-tile pas-windows-injected.pivotal
+   ./winfs-injector-linux --input-tile *.pivotal --output-tile pas-windows-injected.pivotal
    om-linux -t https://$OPS_MGR_HOST -u $OPS_MGR_USR -p $OPS_MGR_PWD -k --request-timeout 3600 upload-product -p pas-windows-injected.pivotal
 else
    om-linux -t https://$OPS_MGR_HOST -u $OPS_MGR_USR -p $OPS_MGR_PWD -k --request-timeout 3600 upload-product -p $FILE_PATH
