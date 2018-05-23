@@ -1,0 +1,35 @@
+---
+
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: "rjain/buildbox"
+
+params:
+  PRODUCT_NAME:
+  OPS_MGR_HOST:
+  OPS_MGR_USR:
+  OPS_MGR_PWD:
+  SINGLETON_JOB_AZ:
+  DEPLOYMENT_NW_AZS:
+  OTHER_AZS:
+  NETWORK_NAME:
+  SYSLOG_ENABLED:
+  SYSLOG_HOST:
+  SYSLOG_PORT:
+  SYSLOG_PROTOCOL:
+  WIN_CELL_TYPE:
+  WIN_CELL_COUNT:
+  WIN_ADMIN_PASSWD:
+  KMS:
+  SSH_ENABLED:
+  RDP_ENABLED:
+
+inputs:
+  - name: vs-tile-pipelines
+  - name: tool-om
+
+run:
+  path: vs-tile-pipelines/tasks/config-pas-windows/task.sh
