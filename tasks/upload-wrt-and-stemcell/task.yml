@@ -20,6 +20,7 @@ inputs:
   - name: tool-om
   - name: pivnet-product
   - name: vs-tile-pipelines
+  - name: windows-stemcell
 
 run:
-  path: vs-tile-pipelines/tasks/upload-product-and-stemcell/task.sh
+  path: vs-tile-pipelines/tasks/upload-wrt-and-stemcell/task.sh
