@@ -19,7 +19,9 @@ params:
   ERRANDS_TO_DISABLE:
   ERRANDS_TO_WHENCHANGED:
   PREDELETE_ERRANDS_TO_DISABLE:
-
+  OPSMAN_URI:
+  UAA_USERNAME:
+  UAA_PASSWORD:
 
 inputs:
   - name: vs-tile-pipelines

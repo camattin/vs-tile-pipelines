@@ -38,8 +38,26 @@ NETWORK=$(cat <<-EOF
 EOF
 )
 
+if [ ! -z $OPSMAN_URI ]; then
+  opsman_uri="https://${OPSMAN_URI}"
+else
+  opsman_uri=""
+fi
+
 PROPERTIES=$(cat <<-EOF
 {
+    ".properties.opsman.enable.url": {
+      "value": "$opsman_uri"
+    },
+    ".healthwatch-forwarder.health_check_az": {
+      "value": "$SINGLETON_JOB_AZ"
+    },
+    ".healthwatch-forwarder.bosh_taskcheck_username": {
+      "value": "$UAA_USERNAME"
+    },
+    ".healthwatch-forwarder.bosh_taskcheck_password": {
+      "value": "$UAA_PASSWORD"
+    }
 }
 EOF
 )
