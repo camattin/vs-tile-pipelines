@@ -29,6 +29,9 @@ NETWORK=$(cat <<-EOF
     $OTHER_AZS
   ],
   "network": {
+    "name": "$DEPLOYMENT_NETWORK_NAME"
+  },
+  "service_network": {
     "name": "$NETWORK_NAME"
   }
 }
