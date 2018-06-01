@@ -1,0 +1,31 @@
+---
+
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: "rjain/buildbox"
+
+params:
+  PRODUCT_NAME:
+  OPS_MGR_HOST:
+  OPS_MGR_USR:
+  OPS_MGR_PWD:
+  SINGLETON_JOB_AZ:
+  OTHER_JOB_AZS:
+  NETWORK_NAME:
+  DEPLOYMENT_NETWORK_NAME:
+  ERRANDS_TO_DISABLE:
+  ERRANDS_TO_WHENCHANGED:
+  PREDELETE_ERRANDS_TO_DISABLE:
+  OPSMAN_URI:
+  UAA_USERNAME:
+  UAA_PASSWORD:
+
+inputs:
+  - name: vs-tile-pipelines
+  - name: tool-om
+
+run:
+  path: vs-tile-pipelines/tasks/config-eventalerts/task.sh
