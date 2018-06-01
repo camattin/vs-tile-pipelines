@@ -56,7 +56,9 @@ PROPERTIES=$(cat <<-EOF
       "value": "$UAA_USERNAME"
     },
     ".healthwatch-forwarder.bosh_taskcheck_password": {
-      "value": "$UAA_PASSWORD"
+      "value": {
+        "secret": "$UAA_PASSWORD"
+      }
     }
 }
 EOF
