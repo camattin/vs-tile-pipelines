@@ -8,6 +8,7 @@ image_resource:
     repository: "rjain/buildbox"
 
 params:
+  PRODUCT_NAME:
   OPS_MGR_HOST:
   OPS_MGR_USR:
   OPS_MGR_PWD:
