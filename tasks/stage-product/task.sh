@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bashA
 
 set -eux
 
@@ -17,15 +17,14 @@ set -eux
 # limitations under the License.
 
 function main() {
-
   local cwd
   cwd="${1}"
 
   local version
   pushd "${cwd}/pivnet-product"
-    version="$(unzip -p *.pivotal 'metadata/*.yml' | grep 'product_version:' | cut -d ':' -f 2 | tr -d ' ' | tr -d "'")"
+    version="$(unzip -p *.pivotal 'metadata/*.yml' | grep 'product_version:' | cut -d ':' -f 2 | tr -d ' ' | tr -d "'" | tr -d ' "" ' )"
   popd
-  
+
   echo "version = $version"
   echo "product = $PRODUCT_NAME"
   
@@ -49,4 +48,4 @@ function main() {
   fi
 }
 
-main "${PWD}"
+main "${PWD}" 
