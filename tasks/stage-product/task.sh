@@ -1,4 +1,4 @@
-#!/bin/bashA
+#!/bin/bash -e
 
 set -eux
 
