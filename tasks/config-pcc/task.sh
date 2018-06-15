@@ -41,24 +41,9 @@ EOF
 
 PROPERTIES=$(cat <<-EOF
 {  
-   # ".redis-on-demand-broker.service_instance_limit": {
-   #   "value": 0
-   # },
-   # ".properties.metrics_polling_interval": {
-   #   "value": 30
-   # },
-   # ".properties.small_plan_selector": {
-   #    "value": "$SMALL_PLAN_STATUS"
-   # },
-   # ".properties.medium_plan_selector": {
-   #   "value": "$MEDIUM_PLAN_STATUS"
-   # },
-   # ".properties.large_plan_selector": {
-   #   "value": "$LARGE_PLAN_STATUS"
-   #},
-   # ".properties.backups_selector": {
-   #   "value": "No Backups"
-   # }
+    ".properties.backups_selector": {
+      "value": "No Backups"
+    }
 }
 EOF
 )
