@@ -42,7 +42,6 @@ EOF
 PROPERTIES=$(cat <<-EOF
 {  
 }
-}
 EOF
 )
 
