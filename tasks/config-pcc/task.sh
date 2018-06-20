@@ -67,6 +67,24 @@ echo "Saving properties for minimum valuable configuration"
 
 $CMD -t https://$OPS_MGR_HOST -u $OPS_MGR_USR -p $OPS_MGR_PWD -k configure-product -n $PRODUCT_NAME -p "$PROPERTIES" -pn "$NETWORK" -pr "$RESOURCES"
 
+if [[ "$SYSLOG_SELECTOR" == "enable" ]]; then
+SYSLOG_PROPS=$(cat <<-EOF
+{
+    ".properties.syslog_enabled_for_service_instances": {
+      "value": "$SYSLOG_SELECTOR"
+    },
+    ".properties.syslog.enable.syslog_tls": {
+      "value": "true"
+    },
+    ".properties.syslog.enable.syslog_address": {
+      "value": "$SYSLOG_HOST"
+    },
+    ".properties.syslog.enable.syslog_port": {
+      "value": $SYSLOG_PORT
+    }
+}
+EOF
+)
 
 if [[ -z "$ERRANDS_TO_DISABLE" ]] || [[ "$ERRANDS_TO_DISABLE" == "none" ]]; then
   echo "No post-deploy errands to disable"
