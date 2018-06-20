@@ -85,6 +85,16 @@ SYSLOG_PROPS=$(cat <<-EOF
 }
 EOF
 )
+else
+SYSLOG_PROPS=$(cat <<-EOF
+{
+    ".properties.syslog": {
+      "value": "disable"
+    }
+}
+EOF
+)
+fi
 
 if [[ -z "$ERRANDS_TO_DISABLE" ]] || [[ "$ERRANDS_TO_DISABLE" == "none" ]]; then
   echo "No post-deploy errands to disable"
