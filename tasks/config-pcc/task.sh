@@ -40,32 +40,20 @@ EOF
 )
 
 PROPERTIES=$(cat <<-EOF
-{  
-  ".properties.plan1_enable_service_plan.enable.plan_name": {
-    "value": 0
-  },  
-  ".properties.plan2_enable_service_plan.enable.plan_name": {
-    "value": 0
-  },  
-  ".properties.plan3_enable_service_plan.enable.plan_name": {
-    "value": 0
-  },  
-  ".properties.plan4_enable_service_plan.enable.plan_name": {
-    "value": 0
+{    
+  ".properties.plan1_enable_service_plan": {
+    "value": "disable"
   },
-  ".properties.plan1_enable_service_plan.enable.service_instance_azs": {
-    "value": 0
-  },  
-  ".properties.plan2_enable_service_plan.enable.service_instance_azs": {
-    "value": 0
-  }, 
-  ".properties.plan3_enable_service_plan.enable.service_instance_azs": {
-    "value": 0
+  ".properties.plan2_enable_service_plan": {
+    "value": "disable"
   },
-  ".properties.plan4_enable_service_plan.enable.service_instance_azs": {
-    "value": 0
-  }  
-}
+  ".properties.plan3_enable_service_plan": {
+    "value": "disable"
+  },
+  ".properties.plan4_enable_service_plan": {
+    "value": "disable"
+  }
+}  
 EOF
 )
 
