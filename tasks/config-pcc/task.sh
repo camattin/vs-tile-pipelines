@@ -42,16 +42,16 @@ EOF
 PROPERTIES=$(cat <<-EOF
 {    
   ".properties.plan1_enable_service_plan": {
-    "value": false
+    "value": "disable"
   },
   ".properties.plan2_enable_service_plan": {
-    "value": false
+    "value": "disable"
   },
   ".properties.plan3_enable_service_plan": {
-    "value": false
+    "value": "disable"
   },
   ".properties.plan4_enable_service_plan": {
-    "value": false
+    "value": "disable"
   }
 }  
 EOF
