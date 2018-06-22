@@ -26,9 +26,9 @@ NETWORK=$(cat <<-EOF
   "singleton_availability_zone": {
     "name": "$SINGLETON_JOB_AZ"
   },
-  "other_availability_zones": [
+  "other_availability_zones": {
     "name": "$OTHER_AZS"
-  ],
+  },
   "network": {
     "name": "$NETWORK_NAME"
   },
