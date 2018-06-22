@@ -26,9 +26,9 @@ NETWORK=$(cat <<-EOF
   "singleton_availability_zone": {
     "name": "$SINGLETON_JOB_AZ"
   },
-  "other_availability_zones": {
-    "name": "$OTHER_AZS"
-  },
+  "other_availability_zones": [
+    "$OTHER_AZS"
+  ],
   "network": {
     "name": "$NETWORK_NAME"
   },
@@ -39,21 +39,8 @@ NETWORK=$(cat <<-EOF
 EOF
 )
 
-
 PROPERTIES=$(cat <<-EOF
 {    
-  ".properties.plan1_enable_service_plan": {
-    "value": "disable"
-  },
-  ".properties.plan2_enable_service_plan": {
-    "value": "disable"
-  },
-  ".properties.plan3_enable_service_plan": {
-    "value": "disable"
-  },
-  ".properties.plan4_enable_service_plan": {
-    "value": "disable"
-  }
 }  
 EOF
 )
