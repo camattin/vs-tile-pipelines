@@ -54,7 +54,7 @@ PROPERTIES=$(cat <<-EOF
     "value": "enable"
   },
   ".properties.plan3_enable_service_plan.enable.service_instance_azs": {
-    "value": "enable"
+    "value": true
   },   
   ".properties.plan4_enable_service_plan": {
     "value": "disable"
