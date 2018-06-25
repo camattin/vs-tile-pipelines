@@ -40,7 +40,28 @@ EOF
 )
 
 PROPERTIES=$(cat <<-EOF
-{    
+{
+  ".properties.errand_plan": {
+    "value": "plan3"
+  },
+  ".properties.plan1_enable_service_plan": {
+    "value": "disable"
+  },
+  ".properties.plan2_enable_service_plan": {
+    "value": "disable"
+  },
+  ".properties.plan3_enable_service_plan": {
+    "value": "enable"
+  },
+  ".properties.plan4_enable_service_plan": {
+    "value": "disable"
+  },
+  ".properties.plan5_enable_service_plan": {
+    "value": "disable"
+  },
+  ".properties.dev_plan_enable_service_plan": {
+    "value": "disable"
+  }
 }  
 EOF
 )
