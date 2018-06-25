@@ -54,6 +54,7 @@ PROPERTIES=$(cat <<-EOF
     "value": "enable"
   },
   ".properties.plan3_enable_service_plan.enable.service_instance_azs": {
+    "type": "service_network_az_multi_select",
     "value": "AZ1",
   },   
   ".properties.plan4_enable_service_plan": {
