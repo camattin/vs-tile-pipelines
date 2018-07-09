@@ -20,10 +20,9 @@ echo "Applying changes on Ops Manager @ ${OPSMAN_URI}"
 echo "${OPSMAN_USERNAME}"
 echo "${OPSMAN_PASSWORD}"
 
-/bin/ls
-echo `pwd`
+chmod 755 tool-om/om-linux
 
-om-linux \
+tool-om/om-linux \
   --target "https://${OPSMAN_URI}" \
   --skip-ssl-validation \
   --username "${OPSMAN_USERNAME}" \
