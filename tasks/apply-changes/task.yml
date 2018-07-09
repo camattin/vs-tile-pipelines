@@ -21,6 +21,7 @@ image_resource:
 
 inputs:
   - name: vs-tile-pipelines
+  - name: tool-om
 
 params:
   OPSMAN_USERNAME:
