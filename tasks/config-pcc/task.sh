@@ -10,7 +10,7 @@ RELEASE=`$CMD -t https://$OPS_MGR_HOST -u $OPS_MGR_USR -p $OPS_MGR_PWD -k availa
 
 PRODUCT_NAME=`echo $RELEASE | cut -d"|" -f2 | tr -d " "`
 #PRODUCT_VERSION=`echo $RELEASE | cut -d"|" -f3 | tr -d " "`
-PRODUCT_VERSION=`echo $RELEASE | cut -d"|" -f6 | tr -d " "`
+PRODUCT_VERSION=`echo $RELEASE | cut -d"|" -f4 | tr -d " "`
 
 $CMD -t https://$OPS_MGR_HOST -u $OPS_MGR_USR -p $OPS_MGR_PWD -k stage-product -p $PRODUCT_NAME -v $PRODUCT_VERSION
 
