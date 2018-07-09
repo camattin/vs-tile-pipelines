@@ -20,6 +20,9 @@ echo "Applying changes on Ops Manager @ ${OPSMAN_URI}"
 echo "${OPSMAN_USERNAME}"
 echo "${OPSMAN_PASSWORD}"
 
+/bin/ls
+echo `pwd`
+
 om-linux \
   --target "https://${OPSMAN_URI}" \
   --skip-ssl-validation \
