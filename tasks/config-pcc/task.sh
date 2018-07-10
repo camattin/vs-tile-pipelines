@@ -19,7 +19,16 @@ function fn_other_azs {
   echo $azs_csv | awk -F "," -v braceopen='{' -v braceclose='}' -v name='"name":' -v quote='"' -v OFS='"},{"name":"' '$1=$1 {print braceopen name quote $0 quote braceclose}'
 }
 
+
+function fn_plan_azs {
+  local pazs_csv=$1
+  echo $pazs_csv | awk -F "," -v braceopen='{' -v braceclose='}' -v name='"name":' -v quote='"' -v OFS='"},{"name":"' '$1=$1 {print braceopen name quote $0 quote braceclose}'
+}
+
+
 OTHER_AZS=$(fn_other_azs $OTHER_JOB_AZS)
+
+PLAN_AZS=$(fn_plan_azs $PLAN_AZS)
 
 NETWORK=$(cat <<-EOF
 {
@@ -51,8 +60,11 @@ PROPERTIES=$(cat <<-EOF
     "value": "disable"
   },
   ".properties.plan3_enable_service_plan": {
-    "value": "disable"
+    "value": "enable"
   },
+  ".properties.plan3_enable_service_plan.enable.service_instance_azs": [
+    $PLAN_AZS
+  ],
   ".properties.plan4_enable_service_plan": {
     "value": "disable"
   },
