@@ -28,6 +28,8 @@ function fn_plan_azs {
 
 OTHER_AZS=$(fn_other_azs $OTHER_JOB_AZS)
 
+echo $PLAN_AZS
+
 PLAN_AZS=$(fn_plan_azs $PLAN_AZS)
 
 NETWORK=$(cat <<-EOF
